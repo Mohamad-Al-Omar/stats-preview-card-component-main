@@ -1,0 +1,150 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+:root {
+    --main-backgroun: hsl(233, 47%, 7%);
+    --card-background: hsl(244, 38%, 16%);
+    --accent: hsl(277, 64%, 61%);
+    --accent2: hsla(277, 64%, 61%,50%);
+    --main-heading: hsl(0, 0%, 100%);
+    --main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    font-size: 15px;
+    background-color: var(--main-backgroun);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--card-background);
+    display: flex;
+    max-width: 80%;
+    height: 100%;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-side {
+    flex: 1;
+    position: relative;
+}
+
+.right-side::before {
+    content: '';
+    background-color: var(--accent2);
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-heading {
+    color: var(--main-heading);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.main-heading span {
+    color: var(--accent);
+}
+
+.main-paragraph {
+    color: var(--main-paragraph);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.status-heading {
+    color: var(--stat-headings);
+}
+
+.content {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.right-side img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.status-heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.status-heading .itme .title {
+    color: var(--main-heading);
+    text-align: center;
+}
+
+.attribution {
+    color: var(--main-heading);
+    position: fixed;
+    font-size: 11px;
+    bottom: 15px;
+}
+
+.attribution a {
+    color: hsl(120, 84%, 41%);
+}
+
+@media screen and (max-width:375px) {
+    .card {
+        flex-direction: column-reverse;
+        max-width: 80%;
+        height: 90%;
+    }
+    .left-side {
+        margin-top: 10px;
+        flex: 2;
+    }
+    .content {
+        gap: 30px;
+    }
+    .right-side {
+        flex: 1;
+    }
+    .status-heading {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
